@@ -49,7 +49,7 @@ Open your TAGC plot in a standard image viewer. Each circle on the plot marks a 
 
 **Step 6: Apply filtering characterisitics to contigs**
 
-Once you've decided on filtering characteristics, you need to apply them to the actual data. We did this using AWK, a manipulation tool for delimited text and a standard part of any *nix distribution. This manipulation will be performed on the view file generated earlier. The columns of the view file are: name length  GC  N   bam0    phylum.t.6  phylum.s.7  phylum.c.8. For our purposes, the important columns are "name", "GC", and "bam0" (coverage). Select by GC and bam0 based on the blobplot, then save the name column to a separate file.
+Once you've decided on filtering characteristics, you need to apply them to the actual data. We did this using AWK, a manipulation tool for delimited text and a standard part of any \*nix distribution. This manipulation will be performed on the view file generated earlier. The columns of the view file are: name length  GC  N   bam0    phylum.t.6  phylum.s.7  phylum.c.8. For our purposes, the important columns are "name", "GC", and "bam0" (coverage). Select by GC and bam0 based on the blobplot, then save the name column to a separate file.
 
     cat view.blobDB.table.txt | awk '$3 < 0.45' | awk '$5 > 2' | awk '{print $1}' > tokeep.contigids # Example characteristics
 
